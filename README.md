@@ -6,7 +6,7 @@ container-security-demo/
 ├── Dockerfile
 ├── demo-root.sh
 ├── demo-nonroot.sh
-└── host-data/    ← directory where demo will attempt to write in
+└── host-data/    ← bind-mounted directory where demo will attempt to write in
 
 ## The demo
 The demo will demonstrate the following:
