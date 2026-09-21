@@ -32,3 +32,7 @@ The first part of the demo. It will:
 The second aprt of the demo. It will:
 - Create a container as user 1001 with all capabilities dropped
 - Write a file unsuccessfully into the bind-mounted host-data directory
+
+### Execution order
+1) Run demo-root.sh
+2) Run demo-user.sh
