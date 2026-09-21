@@ -2,11 +2,14 @@
 This repository contains my research and the scripts used for the demo. As I am on windows, the demo will be run from inside WSL
 
 ## Project structure
+
+```text
 container-security-demo/
 ├── Dockerfile
 ├── demo-root.sh
 ├── demo-nonroot.sh
 └── host-data/    ← bind-mounted directory where demo will attempt to write in
+```
 
 ## The demo
 The demo will demonstrate the following:
