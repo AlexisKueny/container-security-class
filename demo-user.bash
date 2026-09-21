@@ -13,16 +13,13 @@ echo "Before (host):"
 # List the contents of the host directory before running the container.
 ls -la "$HOST_DIR"
 
+# Run as a non-root user with all capabilities dropped, mount the host directory,
+# and attempt to write to it.
 docker run --rm \
-  # Run as non-root user with UID 1001 and GID 1001.
   --user 1001:1001 \
-  # Drop all capabilities.
   --cap-drop=ALL \
-  # Mount the host directory into the container.
   -v "$HOST_DIR:/mnt/host-data" \
-  # Specify the image to use.
   "$IMAGE" \
-  # Attempt to write to the mounted host directory as a non-root user.
   sh -c "echo 'written by non-root container' > /mnt/host-data/$OUTFILE && echo 'WRITE SUCCEEDED' || echo 'WRITE FAILED'"
 
 echo "--- After (host):"

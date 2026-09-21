@@ -16,12 +16,10 @@ echo "Before (host):"
 # List the contents of the host directory before running the container.
 ls -la "$HOST_DIR"
 
+# Mount the host directory and attempt to write to it as the root user.
 docker run --rm \
-  # Mount the host directory into the container.
   -v "$HOST_DIR:/mnt/host-data" \
-  # Specify the image to use.
   "$IMAGE" \
-  # Attempt to write to the mounted host directory as the root user.
   sh -c "echo 'written by root container' > /mnt/host-data/$OUTFILE && echo 'WRITE SUCCEEDED' || echo 'WRITE FAILED'"
 
 echo "--- After (host):"
