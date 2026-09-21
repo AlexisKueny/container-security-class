@@ -14,7 +14,7 @@ The demo will demonstrate the following:
 - That the same write will fail when attempting as a non-root user and with capabilities dropped
 - Therefore demonstrate least-privilege hardening and role of capabilities in controlling container access to host
 
-Here is what each file in the demo does
+Here is what each file in the demo does:
 
 ### Dockerfile
 To build the docker container used in the demo. It will be configured with an extra non-root user 1001 to demonstrate point 2
